@@ -14,12 +14,12 @@ public class TC_Class1 {
 		public static final WebDriver webDriver = new FirefoxDriver();;
 		
 
-	String launchPageHeading = "//h2[text()='Guru99 Bank']";
-	final String userName_element = "//input[@name='uid']", password_element = "//input[@name='password']",
-			signIn_element = "//input[@name='btnLogin']";
-	final String userName_value = "mngr28642", password_value = "ydAnate";
-	final String managerID = "//td[contains(text(),'Manger Id')]";
-	final String newCustomer = "//a[@href='addcustomerpage.php']", fundTransfer = "//a[@href='FundTransInput.php']";
+	String launchPageHeading = "//h1[text()='Hello World! version 2.0.3']";
+	//final String userName_element = "//input[@name='uid']", password_element = "//input[@name='password']",
+		//	signIn_element = "//input[@name='btnLogin']";
+	//final String userName_value = "mngr28642", password_value = "ydAnate";
+	//final String managerID = "//td[contains(text(),'Manger Id')]";
+	//final String newCustomer = "//a[@href='addcustomerpage.php']", fundTransfer = "//a[@href='FundTransInput.php']";
 
 	/**
 	 * This test case will initialize the webDriver
@@ -29,7 +29,7 @@ public class TC_Class1 {
 	public void tc01LaunchURL() {
 		webDriver.manage().window().maximize();
 		webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		webDriver.get("http://www.demo.guru99.com/V4/");
+		webDriver.get("http://fd-dvops-vm-01.eastus.cloudapp.azure.com:50000/hello-world-war/");
 	}
 
 	/**
@@ -48,26 +48,26 @@ public class TC_Class1 {
 	 */
 	@Test(groups = { "bonding", "strong_ties" })
 	public void tc03EnterCredentials() {
-		webDriver.findElement(By.xpath(userName_element)).sendKeys(userName_value);
+		/*webDriver.findElement(By.xpath(userName_element)).sendKeys(userName_value);
 		webDriver.findElement(By.xpath(password_element)).sendKeys(password_value);
-		webDriver.findElement(By.xpath(signIn_element)).click();
+		webDriver.findElement(By.xpath(signIn_element)).click();*/
 	}
 
 	/**
 	 * This test case will verify manger's ID presence on DashBoard
 	 */
-	@Test(groups = { "strong_ties" })
+	/*@Test(groups = { "strong_ties" })
 	public void tc04VerifyLoggedInPage() {
 		Assert.assertTrue(webDriver.findElement(By.xpath(managerID)).isDisplayed(),
 				"Manager ID label is not displayed");
 		System.out.println("Manger Id label is displayed");
-	}
+	}*/
 
 	/**
 	 * This test case will check the presence of presence of New customer link
 	 * And FundTransfer link in Left pannel
 	 */
-	@Test(groups = { "bonding" })
+	/*@Test(groups = { "bonding" })
 	public void tc05VerifyHyperlinks() {
 		Assert.assertTrue(webDriver.findElement(By.xpath(newCustomer)).isEnabled(),
 				"New customer hyperlink is not displayed");
@@ -76,6 +76,6 @@ public class TC_Class1 {
 		Assert.assertTrue(webDriver.findElement(By.xpath(fundTransfer)).isEnabled(),
 				"Fund Transfer hyperlink is not displayed");
 		System.out.println("Fund Transfer hyperlink is displayed");
-	}
+	}*/
 
 }
